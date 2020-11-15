@@ -1,8 +1,8 @@
 nombre_simbolico: usuario
 fecha_creacion: 20/10/2020 21:17:53
 usuario_creacion: josedeleon
-fecha_modificacion: 14/11/2020 01:35:57
-usuario_modificacion: Abestruz
-#_registros: 19
-registros_activos: 19
+fecha_modificacion: 15/11/2020 11:41:49
+usuario_modificacion: jamg
+#_registros: 22
+registros_activos: 22
 registros_inactivos: 0

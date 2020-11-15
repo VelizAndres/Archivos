@@ -1,10 +1,10 @@
 nombre_simbolico: indice_Lista_usuario
 fecha_creacion: 
 usuario_creacion:
-fecha_modificacion: 14/11/2020 16:29:39
-usuario_modificacion: PRUEBA
-#_registros: 6
-registros_activos: 2
+fecha_modificacion: 15/11/2020 11:51:59
+usuario_modificacion: jamg1906
+#_registros: 9
+registros_activos: 5
 registros_inactivos: 1
 max_reorganizacion: 5
 registro_inicial: 3

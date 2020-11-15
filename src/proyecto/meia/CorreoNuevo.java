@@ -234,36 +234,35 @@ public class CorreoNuevo extends javax.swing.JFrame {
         {
             lista = cb_lista.getSelectedItem().toString();
         }
- 
-            if(lista.equals("")&& usuario.equals(""))
+        if(lista.equals("")&& usuario.equals(""))
             {
-            JOptionPane.showMessageDialog(rootPane, "Debe añadir destinatario","Error", ERROR);
+                JOptionPane.showMessageDialog(rootPane, "Debe añadir destinatario","Error", ERROR);
             }
-            else
+        else
             {
-            if(txt_asunto.getText().length() <=20 &&txt_mensaje.getText().length()<=100)
-             {
-                String ArchivoAdjunto = txt_adjunto.getText();
-                if(!ArchivoAdjunto.equals(""))        
+                if(txt_asunto.getText().length() <=20 &&txt_mensaje.getText().length()<=100)
                 {
-                   ArchivoAdjunto = GuardarImagen(txt_adjunto.getText());
-                }
-                if(!lista.equals(""))
-                {   
-                    ArrayList<String> Contactos_list = ObtenerContactosDeLista(lbl_usuario.getText(),lista);    
-                    for(String receptor : Contactos_list)
+                    String ArchivoAdjunto = txt_adjunto.getText();
+                    if(!ArchivoAdjunto.equals(""))        
                     {
-                        String[] Registro= Formalizar_Correo(receptor,ArchivoAdjunto);
-                       Insert_correct=   Binario.Insertar(Registro); 
+                    ArchivoAdjunto = GuardarImagen(txt_adjunto.getText());
                     }
-                    Mensaje = " han enviado los mensajes";
-                }
-                if(!usuario.equals(""))
-                {
-                    String[] Registro= Formalizar_Correo(usuario,ArchivoAdjunto);
-                  Insert_correct=  Binario.Insertar(Registro); 
-                    Mensaje = " ha enviado el mensaje";
-}
+                    if(!lista.equals(""))
+                    {   
+                        ArrayList<String> Contactos_list = ObtenerContactosDeLista(lbl_usuario.getText(),lista.trim());    
+                        for(String receptor : Contactos_list)
+                        {
+                            String[] Registro= Formalizar_Correo(receptor,ArchivoAdjunto);
+                            Insert_correct=   Binario.Insertar(Registro); 
+                        }
+                        Mensaje = " han enviado los mensajes";
+                    }
+                    if(!usuario.equals(""))
+                    {
+                        String[] Registro= Formalizar_Correo(usuario,ArchivoAdjunto);
+                        Insert_correct=  Binario.Insertar(Registro); 
+                         Mensaje = " ha enviado el mensaje";
+                    }
                 }
                 else
                 {
@@ -393,13 +392,17 @@ public ArrayList<String> LlenarUsuarios(String path, String strError){
 
 public void BuscarRegistros()
     {
-                ArrayList<String> agregados2 = LlenarListas("MEIA\\Lista_Usuario.txt",lbl_usuario.getText(),"Error");
+                ArrayList<String> agregados2 = LlenarListas("MEIA\\lista.txt",lbl_usuario.getText(),"Error");
+                ArrayList<String> agregados3 = LlenarListas("MEIA\\bitacora_lista.txt",lbl_usuario.getText(),"Error");
                 for (int i = 0; i < agregados2.size(); i++) {
                     cb_lista.addItem(agregados2.get(i));
                 }
-                if(agregados2.isEmpty())
+                for (int i = 0; i < agregados3.size(); i++) {
+                    cb_lista.addItem(agregados3.get(i));
+                }
+                if(agregados2.isEmpty() && agregados3.isEmpty())
                 {
-                    JOptionPane.showMessageDialog(null, "No se encontraron correos asociados","Error", WIDTH);
+                    JOptionPane.showMessageDialog(null, "No se encontraron listas asociadas","Error", WIDTH);
                 }
     }
 
@@ -423,7 +426,7 @@ public ArrayList<String> LlenarListas(String path, String usuario,String strErro
                         {
                             split = Linea.split("\\|");
                             String estatus = split[5];
-                            String user  = split[1];
+                            String user  = split[1].trim();
                             if(estatus.trim().equals("1") && !lista.contains(split[0]) && user.equals(usuario))
                             {
                                 lista.add(split[0]);

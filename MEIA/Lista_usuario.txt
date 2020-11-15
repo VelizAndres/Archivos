@@ -5,3 +5,6 @@ U1                            |PRUEBA              |AAA                 |desc   
 U1                            |PRUEBA              |DDD                 |desc                                    |28/10/2020 10:25:59 |1         
 U2                            |PRUEBA              |DDD                 |prueba funcionamiento                   |14/11/2020 14:29:17 |1         
 U2                            |PRUEBA              |AAA                 |prueba                                  |14/11/2020 16:29:39 |1         
+amigos                        |jamg1906            |jamg190             |el 190                                  |15/11/2020 11:51:39 |1         
+amigos                        |jamg1906            |jamg                |jamg                                    |15/11/2020 11:51:49 |1         
+amigos                        |jamg1906            |jamg2000            |el 2000                                 |15/11/2020 11:51:58 |1         

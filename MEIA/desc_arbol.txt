@@ -1,0 +1,6 @@
+nombre_simbolico:desc_arbol
+fecha_creacion:Sun Nov 15 12:27:33 CST 2020
+usuario_creacion:jamg1906
+fecha_modificacion:Sun Nov 15 12:27:33 CST 2020
+usuario_modificacion:jamg1906
+#_registros:3

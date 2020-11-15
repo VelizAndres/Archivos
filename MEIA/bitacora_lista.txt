@@ -1,1 +1,3 @@
 nombre                        |usuario             |descripcion                             |numero_usuarios|fecha_creacion      |estatus
+amigos                        |jamg                |jamgs                                   |0              |15/11/2020 11:43:00 |1      
+amigos                        |jamg1906            |Los jamg                                |3              |15/11/2020 11:50:05 |1      
